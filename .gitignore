@@ -1,0 +1,41 @@
+# ─── OS / Editor ────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ─── Node / npm ──────────────────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ─── Environment & Secrets ───────────────────────────────────────────────────
+# Keep .env.example files (they document required vars), but never commit real secrets
+.env
+.env.local
+.env.*.local
+
+# Google Cloud service account key — NEVER commit this
+backend/service-account.json
+
+# ─── Build outputs ───────────────────────────────────────────────────────────
+frontend/dist/
+frontend/build/
+backend/dist/
+backend/build/
+
+# ─── Logs ────────────────────────────────────────────────────────────────────
+logs/
+*.log
+
+# ─── Docker ──────────────────────────────────────────────────────────────────
+# Dockerfile and docker-compose are intentionally tracked; ignore local overrides
+docker-compose.override.yml
+
+# ─── Misc ────────────────────────────────────────────────────────────────────
+.cache/
+coverage/
+.nyc_output/

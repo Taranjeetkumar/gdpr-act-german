@@ -1,0 +1,39 @@
+# Datastore composite indexes for the GDPR Tracker.
+#
+# Datastore can only satisfy a query that combines a .filter() on one
+# property with .order() on a different property if a matching composite
+# index has been created. Without it, the query throws FAILED_PRECONDITION
+# at runtime and silently returns [], which looks the same as "no data yet".
+#
+# Single-property queries (e.g. getAllAuditLogs, order by timestamp only,
+# no filter) don't need an index here, Datastore auto-indexes every
+# property on its own.
+#
+# Deploy these (run once, then again whenever you add an index):
+#   gcloud datastore indexes create index.yaml --project=YOUR_PROJECT_ID
+#
+# Check status (indexes take a few minutes to build the first time):
+#   gcloud datastore indexes list --project=YOUR_PROJECT_ID
+#
+# Until the index shows READY, the app falls back to an in-memory sort
+# so audit logs still display, just a bit slower.
+
+indexes:
+
+# AuditLog: per-user audit trail (DataLineage page)
+# query: filter(userId = ?) + order(timestamp desc)
+- kind: AuditLog
+  properties:
+  - name: userId
+    direction: asc
+  - name: timestamp
+    direction: desc
+
+# DeletionLog: per-user erasure certificate (Article 17)
+# query: filter(userId = ?) + order(deletedAt desc)
+- kind: DeletionLog
+  properties:
+  - name: userId
+    direction: asc
+  - name: deletedAt
+    direction: desc

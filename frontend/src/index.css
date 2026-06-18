@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-gray-900 antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .badge-low    { @apply bg-emerald-100 text-emerald-800 text-xs font-medium px-2 py-0.5 rounded-full; }
+  .badge-medium { @apply bg-amber-100 text-amber-800 text-xs font-medium px-2 py-0.5 rounded-full; }
+  .badge-high   { @apply bg-red-100 text-red-800 text-xs font-medium px-2 py-0.5 rounded-full; }
+  .badge-special{ @apply bg-purple-100 text-purple-800 text-xs font-medium px-2 py-0.5 rounded-full; }
+
+  .db-badge-alloy    { @apply bg-blue-50 text-blue-700 border border-blue-200; }
+  .db-badge-firestore{ @apply bg-orange-50 text-orange-700 border border-orange-200; }
+  .db-badge-redis    { @apply bg-emerald-50 text-emerald-700 border border-emerald-200; }
+  .db-badge-datastore{ @apply bg-purple-50 text-purple-700 border border-purple-200; }
+}
