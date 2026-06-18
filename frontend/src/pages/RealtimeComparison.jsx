@@ -319,7 +319,7 @@ export default function RealtimeComparison() {
       </div>
 
       {/* Explanation footer */}
-      <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 text-xs text-gray-500 space-y-1.5">
+      {/* <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 text-xs text-gray-500 space-y-1.5">
         <p className="font-medium text-gray-600 flex items-center gap-1.5"><Info className="w-3.5 h-3.5" /> Reading this demo</p>
         <p>
           The same POST /api/consent/:userId request writes to Firestore, Memorystore, and AlloyDB
@@ -330,7 +330,7 @@ export default function RealtimeComparison() {
           (AlloyDB). That's the architectural trade-off the README documents in prose, this page
           makes it observable.
         </p>
-      </div>
+      </div> */}
     </div>
   );
 }
