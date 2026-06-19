@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Shield, LayoutDashboard, ToggleLeft, Database, GitBranch, FileText, LogOut, Radio } from 'lucide-react';
+import { Shield, LayoutDashboard, ToggleLeft, Database, GitBranch, FileText, LogOut, Radio, Gauge } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 
 const navItems = [
@@ -9,9 +9,10 @@ const navItems = [
   { path: '/lineage',   label: 'Lineage',      icon: GitBranch },
   { path: '/requests',  label: 'My Rights',    icon: FileText },
   { path: '/realtime',  label: 'Live Compare', icon: Radio },
+  { path: '/benchmark', label: 'Benchmark',    icon: Gauge },
 ];
 
-// DB badges shown in navbar to remind users of the architecture
+// DB badges shown in navbar to remind users of the architecturec
 const DB_LABELS = [
   { label: 'AlloyDB',     color: 'bg-blue-100 text-blue-700' },
   { label: 'Firestore',   color: 'bg-orange-100 text-orange-700' },

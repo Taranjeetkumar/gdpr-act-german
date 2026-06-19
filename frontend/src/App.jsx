@@ -82,14 +82,17 @@ function AppRoutes() {
       <Route path="/realtime" element={
         <ProtectedRoute><Layout><RealtimeComparison /></Layout></ProtectedRoute>
       } />
+        <Route path="/benchmark" element={
+        <ProtectedRoute><Layout><BenchmarkDashboard /></Layout></ProtectedRoute>
+      } />
 
       {/* Admin-only routes — use AdminLayout so user nav links are hidden */}
       <Route path="/admin" element={
         <AdminRoute><AdminLayout><AdminDashboard /></AdminLayout></AdminRoute>
       } />
-      <Route path="/benchmark" element={
+      {/* <Route path="/benchmark" element={
         <AdminRoute><AdminLayout><BenchmarkDashboard /></AdminLayout></AdminRoute>
-      } />
+      } /> */}
 
       <Route path="*" element={<Navigate to="/dashboard" replace />} />
     </Routes>

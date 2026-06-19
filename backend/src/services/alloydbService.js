@@ -1,10 +1,4 @@
-// AlloyDB (Postgres-compatible) service. Main relational store for personal
-// data, with ACID transactions. Handles the Article 17 cascade delete that
-// flows through personal_data -> data_requests -> users.
-
 const pool = require('../config/alloydb');
-
-// users
 
 async function createUser(firebaseUid, email, fullName) {
   const result = await pool.query(
